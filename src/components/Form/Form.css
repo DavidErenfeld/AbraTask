@@ -1,0 +1,46 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  background: var(--color-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+button {
+  background-color: var(--color-success);
+  color: var(--color-light);
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #43a047;
+}
+
+.error-message {
+  color: var(--color-danger);
+  font-size: 14px;
+}

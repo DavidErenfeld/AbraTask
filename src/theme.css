@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #673ab7;
+  --color-secondary: #3f51b5;
+  --color-success: #4caf50;
+  --color-danger: #f44336;
+  --color-light: #ffffff;
+  --color-dark: #333333;
+  --color-bg: #f7f7f7;
+
+  --font-family: "Roboto", Arial, sans-serif;
+
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: 0.2s ease-in-out;
+}
