@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./Form.css";
 import { addPlaceToServer } from "../../services/api";
 import { usePlaceStore } from "../../store/PlaseStor";
+import Loader from "../Loader/Loader";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [type, setType] = useState("Restaurant");
   const [erorrMessage, setErorrMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   const { addPlace } = usePlaceStore();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -19,6 +22,7 @@ const Form = () => {
       return;
     }
     try {
+      setIsLoading(true);
       const res = await addPlaceToServer({
         name: name,
         address: address,
@@ -33,6 +37,7 @@ const Form = () => {
       setAddress("");
       setType("Restaurant");
       setErorrMessage(null);
+      setIsLoading(false);
     }
   };
 
@@ -58,6 +63,7 @@ const Form = () => {
 
       <button type="submit">Add Place</button>
       {erorrMessage && <p className="error-message ">{erorrMessage}</p>}
+      {isLoading && <Loader />}
     </form>
   );
 };
